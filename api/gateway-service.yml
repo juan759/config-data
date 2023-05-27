@@ -6,14 +6,6 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka/
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: *
-  endpoint:
-    health:show-details: always
-
 spring:
   boot:
     admin:
@@ -37,3 +29,11 @@ spring:
           uri: lb://invoice-service
           predicates:
           - Path=/invoice/**,/cart/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  endpoint:
+    health:show-details: always
